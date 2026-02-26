@@ -40,3 +40,31 @@ name := "pink" / age := 20 / check := true
 
 ถ้าไม่ได้กำหนดค่าเริ่มต้น int จะเท่ากับ 0 และ string จะเท่ากับ "" (ค่าว่าง) และสามารถเข้าถึงตัวแปรได้เฉพาะภายในบล็อกโค้ดที่ประกาศตัวแปรไว้เท่านั้นเท่านั้น {}
 
+
+# API by Go
+
+package main
+
+import (
+	"encoding/json"
+	"net/http"
+)
+
+type Message struct {
+	Text string `json:"text"`
+}
+
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+	response := Message{
+		Text: "Hello API",
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(response)
+}
+
+func main() {
+	http.HandleFunc("/", homeHandler)
+
+	http.ListenAndServe(":8080", nil)
+}

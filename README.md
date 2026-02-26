@@ -14,3 +14,24 @@ go land คล้ายกับภาษา C แต่ลดความซั
 6. ทำงานแบบ Concurrency* ได้
 
 
+# ทุกโปรแกรมใน Go ต้องอยู่ในแพ็กเกจ
+-------------------------------
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}
+------------------------------
+
+ถ้ามี file package main และมี func mina() = executable program (.exe)
+import "fmt"
+fmt = format
+เป็น package มาตราฐานของ Go ใช้สำหรับ output / input / text style
+
+func = ประกาศฟังก์ชัน
+เมื่อเราสั่ง go run main.go โปรแกรมจะเริ่มทำงานที่ฟังก์ชัน main() เสมอ
+
+# การประกาศตัวแปรใน Go
+

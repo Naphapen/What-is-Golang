@@ -46,15 +46,16 @@ name := "pink" / age := 20 / check := true
 package main
 
 import (
-	"encoding/json"
-	"net/http"
+	"encoding/json" //ใช้แปลง struct เป็น json
+	"net/http" // ใช้สร้าง Web Server
 )
 
 type Message struct {
-	Text string `json:"text"`
+	Text string `json:"text"` // tag บอกว่าเวลาแปลงเป็น JSON -> field name = text
 }
 
-func homeHandler(w http.ResponseWriter, r *http.Request) {
+// w ส่งค่าไป r รับค่าที่ส่งกลับมา
+func homeHandler(w http.ResponseWriter, r *http.Request) { // w = 
 	response := Message{
 		Text: "Hello API",
 	}
@@ -66,5 +67,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/", homeHandler)
 
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8080", nil) //เปิด server ที่ port 8080
 }
+
+

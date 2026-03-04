@@ -116,18 +116,3 @@ func main() {
 *Enterprise* = ระบบระดับองค์กรขนาดใหญ่ เช่น ธนาคาร, โรงงาน, โลจิสตืกส์, ERP, บริษัทที่มีหลายแผนก / หลายสาขา ที่ต้องรองรับผู้ใช้งานจำนวนมาก ความเสถียรสูง ขยายระบบได้ ฯลฯ
 
 Microservices Enterprise = ระบบองค์กรขนาดใหญ่ ที่มีการแบ่งบริการเล็ก ๆ หลายตัว เพื่อความเสถียร ขยายง่ายและรองรับผู้ใช้งานจำนวนมาก
-
-
-# connect database ใน Go
-ปกติจะใช้ package มาตรฐานชื่อ database/sql แล้วเลือก driver ตามฐานข้อมูลที่ใช้
-
-*โครงสร้างพื้นฐาน
-Your Code
-   ↓
-database/sql (standard library)
-   ↓
-DB Driver (เช่น MySQL / Postgres)
-   ↓
-Database Server
-
-

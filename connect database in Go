@@ -1,1 +1,11 @@
+# connect database ใน Go
+ปกติจะใช้ package มาตรฐานชื่อ database/sql แล้วเลือก driver ตามฐานข้อมูลที่ใช้
 
+*โครงสร้างพื้นฐาน
+Your Code
+   ↓
+database/sql (standard library)
+   ↓
+DB Driver (เช่น MySQL / Postgres)
+   ↓
+Database Server
